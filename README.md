@@ -52,20 +52,35 @@ npm run pack
 
 构建Windows的可执行文件
 ```
-npm run packw
+npm run pw
+```
+
+构建Windows的可执行文件与7z压缩包
+```
+npm run pw7
 ```
 
 构建Linux的可执行文件
 ```
-npm run packl
+npm run pl
+```
+
+构建Linux的可执行文件与7z压缩包
+```
+npm run pl7
 ```
 
 构建Windows与Linux的可执行文件
 ```
-npm run packwl
+npm run pwl
 ```
 
-构建并打包适用于该系统的安装包
+构建Windows与Linux的可执行文件与7z压缩包
+```
+npm run pwl7
+```
+
+构建适用于该系统的可执行文件与安装包
 ```
 npm run dist
 ```

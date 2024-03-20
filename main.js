@@ -43,7 +43,6 @@ function createWindowMain() {
 
     alwaysOnTop: config.alwaysOnTop,
     fullscreen: config.fullscreen,
-    fullscreenable: config.fullscreen,
     frame: config.debugmode,
     resizable: config.debugmode,
     thickFrame: config.debugmode,
@@ -65,7 +64,7 @@ function createWindowMain() {
 
     show: false,
   });
-  win.setContentSize(rect.width, rect.height);
+  if (!config.fullscreen) win.setContentSize(rect.width, rect.height);
   // win.on("closed", quit);
 
   ipcMain.on("getConfig", (event) => {
@@ -106,8 +105,7 @@ function createWindowButton() {
     height: 40,
 
     alwaysOnTop: config.alwaysOnTop,
-    fullscreen: config.fullscreen,
-    fullscreenable: config.fullscreen,
+    fullscreenable: false,
     frame: false,
     resizable: false,
     thickFrame: false,
@@ -137,7 +135,7 @@ function createWindowButton() {
 
 app.whenReady().then(() => {
   createWindowMain();
-  createWindowButton();
+  if (!config.fullscreen && !config.debugmode) createWindowButton();
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {

@@ -1,14 +1,17 @@
 {
   "name": "adscreenplayer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main.js",
   "types": "global.d.ts",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "packw": "electron-builder --dir -w",
-    "packl": "electron-builder --dir -l",
-    "packwl": "electron-builder --dir -w -l",
+    "pw": "electron-builder --dir -w",
+    "pw7": "electron-builder --dir -w && node build7z.js w",
+    "pl": "electron-builder --dir -l",
+    "pl7": "electron-builder --dir -l && node build7z.js l",
+    "pwl": "electron-builder --dir -wl",
+    "pwl7": "electron-builder --dir -wl && node build7z.js wl",
     "dist": "electron-builder"
   },
   "author": "bddjr",
@@ -33,6 +36,9 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "preCompressedFileExtensions": []
+    },
+    "win": {
+      "publish": []
     }
   },
   "devDependencies": {
