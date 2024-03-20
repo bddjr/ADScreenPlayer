@@ -1,0 +1,55 @@
+<!-- https://github.com/bddjr/ADScreenPlayer -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+      .divmain {
+        background: #494949;
+        /* padding: 4px; */
+        width: 100vw;
+        height: 100vh;
+      }
+      button {
+        width: 100vw;
+        height: 100vw;
+        padding: 0;
+        border-width: 0;
+        background: none;
+        color: white;
+      }
+      button:hover {
+        background-color: #ffffff4d;
+      }
+      .xb {
+        font-size: 32px;
+      }
+      .xb:hover {
+        background-color: #ff0000bb;
+      }
+      .x {
+        display: flex;
+        margin-top: -4px;
+        margin-left: 11.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="divmain">
+      <button
+        class="xb"
+        type="button"
+        onclick="window.electronAPI.ipcRendererSend('closeWindow')"
+        title="close"
+      >
+        <span class="x">×</span>
+      </button>
+    </div>
+  </body>
+</html>

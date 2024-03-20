@@ -1,0 +1,58 @@
+{
+  "name": "adscreenplayer",
+  "version": "1.0.2",
+  "main": "main.js",
+  "types": "global.d.ts",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "pw": "electron-builder --dir -w",
+    "pw7": "electron-builder --dir -w && node build7z.js w",
+    "pl": "electron-builder --dir -l",
+    "pl7": "electron-builder --dir -l && node build7z.js l",
+    "pwl": "electron-builder --dir -wl",
+    "pwl7": "electron-builder --dir -wl && node build7z.js wl",
+    "dist": "electron-builder"
+  },
+  "author": "bddjr",
+  "license": "MIT",
+  "description": "ADScreenPlayer",
+  "type": "commonjs",
+  "build": {
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.js",
+      "html/",
+      "conf/config.json",
+      "node_modules/"
+    ],
+    "extraFiles": [
+      "conf/"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "deleteAppDataOnUninstall": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "preCompressedFileExtensions": []
+    },
+    "win": {
+      "publish": []
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.0",
+    "@electron-forge/maker-deb": "^7.3.0",
+    "@electron-forge/maker-rpm": "^7.3.0",
+    "@electron-forge/maker-squirrel": "^7.3.0",
+    "@electron-forge/maker-zip": "^7.3.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
+    "@electron-forge/plugin-fuses": "^7.3.0",
+    "electron": "29.1.4",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
